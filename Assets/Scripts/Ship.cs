@@ -13,16 +13,32 @@ namespace __Shooter__
         public int rockets_capacity = 3;
         public static int max_rockets = 10;
 
-        public int currentShield = 40;
-        public int shield_capacity = 40;
-        public static int max_shield = 100;
+        public float currentShield = 40;
+        public float shieldCapacity = 40;
+        public static float maxShield = 100;
 
-        public float shield_recharge_rate = 10;
-        public static float min_shield_recharge_rate = 3;
+        public float shieldRechargeRate = 10;
+        public static float minShieldRechargeRate = 3;
+
+        public static int shieldRechargeSpeed = 10;
         float lastHit = 0;
 
 
         public GameObject shotPrefab;
+
+        void Update() {
+            if(lastHit + shieldRechargeRate < Time.time){
+                RechargeShield();
+            }
+        }
+
+        public void RechargeShield()
+        {
+            currentShield += shieldRechargeSpeed * Time.deltaTime;
+            if (currentShield > shieldCapacity){
+                currentShield = shieldCapacity;
+            }
+        }
 
         public void FireShot(Vector3 target)
         {
@@ -30,17 +46,12 @@ namespace __Shooter__
             shot.GetComponent<Shot>().shooter = this;
         }
 
-        public void OnTriggerEnter(Collider other)
-        {
-            if (other.GetComponent<Shot>() != null)
-            {
-                Shot shot = other.GetComponent<Shot>();
-                TakeDamage(shot.damage);
-            }
-        }
+
 
         public void TakeDamage(int damage)
         {
+            lastHit = Time.time;
+
             if (currentShield > 0)
             {
                 currentShield -= damage;
@@ -49,7 +60,6 @@ namespace __Shooter__
             {
                 lives--;
             }
-
         }
     }
 }

@@ -17,6 +17,15 @@ namespace __Shooter__ {
             rb = GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * speed);
         }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.GetComponent<Ship>() != null)
+            {
+                Ship ship = other.GetComponent<Ship>();
+                ship.TakeDamage(damage);
+            }
+        }
     }
 }
 
