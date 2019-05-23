@@ -32,6 +32,7 @@ namespace __Shooter__
 
         void Start() {
             rb = GetComponent<Rigidbody>();
+            ShipManager.instance.RegisterShip(this);
         }
 
         void Update() {
