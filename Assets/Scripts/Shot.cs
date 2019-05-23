@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Shooter{
+namespace __Shooter__ {
     public class Shot : MonoBehaviour
     {
         public Ship shooter;
