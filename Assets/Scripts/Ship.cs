@@ -23,8 +23,16 @@ namespace __Shooter__
         public static int shieldRechargeSpeed = 10;
         float lastHit = 0;
 
+        public static float thrust = 20;
+        public static float drift = 1;
 
         public GameObject shotPrefab;
+
+        private Rigidbody rb;
+
+        void Start() {
+            rb = GetComponent<Rigidbody>();
+        }
 
         void Update() {
             if(lastHit + shieldRechargeRate < Time.time){
@@ -46,8 +54,6 @@ namespace __Shooter__
             shot.GetComponent<Shot>().shooter = this;
         }
 
-
-
         public void TakeDamage(int damage)
         {
             lastHit = Time.time;
@@ -60,6 +66,21 @@ namespace __Shooter__
             {
                 lives--;
             }
+        }
+
+        public void MoveForward()
+        {
+            rb.velocity = transform.forward * thrust;
+        }
+
+        public void RotateRight()
+        {
+            rb.angularVelocity = transform.up * drift;
+        }
+
+        public void RotateLeft()
+        {
+            rb.angularVelocity = - transform.up * drift;
         }
     }
 }

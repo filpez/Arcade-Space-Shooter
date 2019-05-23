@@ -9,6 +9,11 @@ namespace __Input__
     {
         __Shooter__.Ship player;
         ICommand buttonMouseLeft;
+        ICommand buttonMouseRight;
+        ICommand buttonW;
+        ICommand buttonA;
+        ICommand buttonD;
+
 
         void Start()
         {
@@ -16,6 +21,10 @@ namespace __Input__
             
             //Bind commands
             buttonMouseLeft = new FireShot();
+
+            buttonW = new MoveForward();
+            buttonA = new RotateLeft();
+            buttonD = new RotateRight();
         }
 
         void Update()
@@ -30,6 +39,20 @@ namespace __Input__
                 ((FireShot)buttonMouseLeft).target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 ((FireShot)buttonMouseLeft).target.y = 0;
                 buttonMouseLeft.Execute(player);
+            }
+            
+            if (Input.GetKey(KeyCode.W))
+            {
+                buttonW.Execute(player);
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                buttonA.Execute(player);
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                buttonD.Execute(player);
             }
         }
     }

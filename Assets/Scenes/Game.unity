@@ -799,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 875703949279931528, guid: efb7cba21d60b2e4c830b3592705f4b4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 33.48
+      value: -20.7
       objectReference: {fileID: 0}
     - target: {fileID: 875703949279931528, guid: efb7cba21d60b2e4c830b3592705f4b4,
         type: 3}
@@ -846,5 +846,15 @@ PrefabInstance:
       propertyPath: shotPrefab
       value: 
       objectReference: {fileID: 953644807}
+    - target: {fileID: 875703949279763112, guid: efb7cba21d60b2e4c830b3592705f4b4,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 875703949279763112, guid: efb7cba21d60b2e4c830b3592705f4b4,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efb7cba21d60b2e4c830b3592705f4b4, type: 3}
