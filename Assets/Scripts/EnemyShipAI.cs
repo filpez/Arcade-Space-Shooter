@@ -42,17 +42,14 @@ namespace __Shooter__{
             UpdateNearestShip();
 
             nearestShipAngle = Vector3.SignedAngle(transform.forward, nearestShip.position - transform.position, Vector3.up);
-            Debug.LogError(nearestShipAngle);
+
             if (nearestShipAngle > 30) {
-                Debug.Log("Right");
                 rotateRight.Execute(_ship);
             }
             else if (nearestShipAngle < -30) {
-                Debug.Log("Left");
                 rotateLeft.Execute(_ship);
             }
             else if (nearestShipSqrDistance > thurstDistance * thurstDistance){
-                Debug.Log("Go");
                 moveForward.Execute(_ship);
             }
 

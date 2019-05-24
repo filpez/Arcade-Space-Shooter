@@ -9,21 +9,28 @@ namespace __Shooter__ {
 
         public int damage = 10;
 
-        public static float speed = 1500;
+        public float speed = 1500;
 
         Rigidbody rb;
 
-        void Start() {
+        void OnEnable() {
             rb = GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
             rb.AddForce(transform.forward * speed);
         }
 
         public void OnTriggerEnter(Collider other)
         {
-            if (other.GetComponent<Ship>() != null)
+            if (other.GetComponent<Ship>() != null && other.GetComponent<Ship>() != shooter)
             {
                 Ship ship = other.GetComponent<Ship>();
                 ship.TakeDamage(damage);
+                
+                GameObject explosion = ObjectPoolManager.instance.GetPooledObject("Shot Explosion");
+                explosion.transform.position = transform.position;
+                explosion.SetActive(true);
+
+                gameObject.SetActive(false);
             }
         }
     }

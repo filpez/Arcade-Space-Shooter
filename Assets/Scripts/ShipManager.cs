@@ -9,7 +9,7 @@ namespace __Shooter__{
         List<Ship> ships;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             ships = new List<Ship>();
             instance = this;

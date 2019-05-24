@@ -26,8 +26,6 @@ namespace __Shooter__
         public static float thrust = 20;
         public static float drift = 1;
 
-        public GameObject shotPrefab;
-
         private Rigidbody rb;
 
         void Start() {
@@ -51,8 +49,11 @@ namespace __Shooter__
 
         public void FireShot(Vector3 target)
         {
-            GameObject shot = Instantiate(shotPrefab, transform.position, Quaternion.FromToRotation(Vector3.forward, target - transform.position));
+            GameObject shot = ObjectPoolManager.instance.GetPooledObject("Shot");
+            shot.transform.position = transform.position;
+            shot.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target - transform.position);
             shot.GetComponent<Shot>().shooter = this;
+            shot.SetActive(true);
         }
 
         public void TakeDamage(int damage)
