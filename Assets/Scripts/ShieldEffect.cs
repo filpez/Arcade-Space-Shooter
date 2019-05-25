@@ -11,7 +11,7 @@ namespace __Shooter__
 
         Ship ship;
 
-        float rateMultiplier = 0.5f;
+        public float rateMultiplier = 0.5f;
 
         void Start()
         {

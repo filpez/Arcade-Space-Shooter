@@ -68,8 +68,19 @@ namespace __Shooter__
             {
                 lives--;
             }
+
+            if (lives == 0){
+                Die();
+            }
         }
 
+        public void Die()
+        {
+            GameObject coin = ObjectPoolManager.instance.GetPooledObject("Coin");
+            coin.transform.position = transform.position;
+            coin.SetActive(true);
+            Destroy(gameObject);
+        }
         public void MoveForward()
         {
             rb.velocity = transform.forward * thrust;
