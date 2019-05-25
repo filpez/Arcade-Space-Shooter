@@ -24,6 +24,11 @@ namespace __Shooter__{
         public List<Ship> GetShips(){
             return ships;
         }
+
+        public void RemoveShip(Ship ship)
+        {
+            ships.Remove(ship);
+        }
     }
 }
 

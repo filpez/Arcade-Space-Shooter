@@ -79,6 +79,7 @@ namespace __Shooter__
             GameObject coin = ObjectPoolManager.instance.GetPooledObject("Coin");
             coin.transform.position = transform.position;
             coin.SetActive(true);
+            ShipManager.instance.RemoveShip(this);
             Destroy(gameObject);
         }
         public void MoveForward()
