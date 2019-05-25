@@ -11,10 +11,11 @@ namespace __Shooter__{
 
         public static float roundTime = 60;
 
+        public Player player;
         public EnemySpawner spawner;
         
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             instance = this;
         }

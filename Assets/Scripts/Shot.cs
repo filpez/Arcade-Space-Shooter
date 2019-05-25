@@ -26,12 +26,26 @@ namespace __Shooter__ {
                 Ship ship = other.GetComponent<Ship>();
                 ship.TakeDamage(damage);
                 
-                GameObject explosion = ObjectPoolManager.instance.GetPooledObject("Shot Explosion");
-                explosion.transform.position = transform.position;
-                explosion.SetActive(true);
+                Explode();
 
                 gameObject.SetActive(false);
             }
+
+            
+        }
+
+        public void OnTriggerExit(Collider other){
+            if (other.gameObject.CompareTag("Limit"))
+            {
+                Explode();
+                gameObject.SetActive(false);
+            }
+        }
+
+        public void Explode(){
+            GameObject explosion = ObjectPoolManager.instance.GetPooledObject("Shot Explosion");
+            explosion.transform.position = transform.position;
+            explosion.SetActive(true);
         }
     }
 }

@@ -4924,6 +4924,7 @@ GameObject:
   - component: {fileID: 875703949279763119}
   - component: {fileID: 875703949279763112}
   - component: {fileID: 875703949279763118}
+  - component: {fileID: 7114675809713177289}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -4980,6 +4981,7 @@ MonoBehaviour:
   currentShield: 40
   shieldCapacity: 40
   shieldRechargeRate: 10
+  lastHit: 0
 --- !u!54 &875703949279763112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5008,6 +5010,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1132fc56063cced4eb20153c750c9bd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7114675809713177289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875703949279763114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a9faad0f30d11c459527b23e84b61b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
 --- !u!1 &4854526501231126443
 GameObject:
   m_ObjectHideFlags: 0
@@ -9773,6 +9788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf8f5591d6039a4680d24547ea94e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rateMultiplier: 0.5
 --- !u!1 &6475903159960276382
 GameObject:
   m_ObjectHideFlags: 0
@@ -14533,8 +14549,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6475903159960276382}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bf8f5591d6039a4680d24547ea94e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rateMultiplier: 0.5

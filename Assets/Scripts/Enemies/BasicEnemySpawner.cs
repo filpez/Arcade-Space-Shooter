@@ -14,11 +14,11 @@ namespace __Shooter__
 
         public List<Material> secundaryColors;
         public override void Spawn(int numberOfEnemies){
-            float diameter = (ShipManager.instance.GetShips().Count + numberOfEnemies) * distanceMultiplier;
+            float radius = (ShipManager.instance.GetShips().Count + numberOfEnemies) * distanceMultiplier;
 
             for (int i = 1; i <= numberOfEnemies; i++){
                 float angle = 2*Mathf.PI/numberOfEnemies * i;
-                GameObject enemy = Instantiate(enemyPrefab, new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle))*diameter, Quaternion.identity);
+                GameObject enemy = Instantiate(enemyPrefab, new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle))*radius, Quaternion.identity);
                 
                 Material mainColor = mainColors[Random.Range(0, mainColors.Count)];
                 Material secundaryColor = secundaryColors[Random.Range(0, secundaryColors.Count)];

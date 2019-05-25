@@ -59,5 +59,17 @@ namespace __Shooter__
             return null;
             
         }
+
+        public ObjectPool GetPool(string tag)
+        {
+            foreach (ObjectPool pool in objectPools)
+            {
+                if (tag == pool.tag){
+                    return pool;
+                }
+            }
+            return null;
+            
+        }
     }
 }

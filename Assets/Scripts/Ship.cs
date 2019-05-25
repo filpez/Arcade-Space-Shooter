@@ -21,7 +21,7 @@ namespace __Shooter__
         public static float minShieldRechargeRate = 3;
 
         public static int shieldRechargeSpeed = 10;
-        float lastHit = 0;
+        public float lastHit = 0;
 
         public static float thrust = 20;
         public static float drift = 1;
