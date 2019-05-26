@@ -9,7 +9,10 @@ namespace __Shooter__
         public int lives = 3;
         public static int max_lives = 3;
 
-        public int current_rockets = 3;
+        public int hitpoints = 100;
+        public static int maxHitpoints = 100;
+
+        public int currentRockets = 3;
         public int rockets_capacity = 3;
         public static int max_rockets = 10;
 
@@ -64,14 +67,31 @@ namespace __Shooter__
             {
                 currentShield -= damage;
             }
-            else
+            else if (hitpoints > 0)
             {
-                lives--;
+                hitpoints -= damage;
             }
+            else if (lives > 0){
+                Explode();
+                transform.position = Vector3.zero;
+                transform.eulerAngles = Vector3.zero;
+                rb.velocity = Vector3.zero;
 
-            if (lives == 0){
+                lives--;
+                RechargeShield();
+                hitpoints = maxHitpoints;
+
+            }
+            else {
                 Die();
             }
+        }
+
+        public void Explode()
+        {
+            GameObject explosion = ObjectPoolManager.instance.GetPooledObject("Player Explosion");
+            explosion.transform.position = transform.position;
+            explosion.SetActive(true);
         }
 
         public void Die()

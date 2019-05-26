@@ -5022,6 +5022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a9faad0f30d11c459527b23e84b61b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ship: {fileID: 875703949279763119}
   coins: 0
 --- !u!1 &4854526501231126443
 GameObject:

@@ -5,6 +5,8 @@ using UnityEngine;
 namespace __Shooter__{
     public class Player: MonoBehaviour{
 
+        public Ship ship;
+
         public int coins = 0;
         
         public void OnTriggerEnter(Collider other)
