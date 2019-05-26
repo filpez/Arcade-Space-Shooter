@@ -4974,12 +4974,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c040633bc1fbb14488c5b8dc264564d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
-  current_rockets: 3
+  lives: 0
+  hitpoints: 100
+  currentRockets: 3
   rockets_capacity: 3
   currentShield: 40
   shieldCapacity: 40
   shieldRechargeRate: 10
+  lastHit: 0
+  killCount: 0
+  fireRate: 0.5
 --- !u!54 &1080671667422667554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4989,8 +4993,8 @@ Rigidbody:
   m_GameObject: {fileID: 1080671667422667552}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.2
-  m_AngularDrag: 1
+  m_Drag: 0.5
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0

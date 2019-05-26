@@ -4976,12 +4976,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  current_rockets: 3
+  hitpoints: 100
+  currentRockets: 3
   rockets_capacity: 3
   currentShield: 40
   shieldCapacity: 40
   shieldRechargeRate: 10
   lastHit: 0
+  killCount: 0
+  fireRate: 0.1
 --- !u!54 &875703949279763112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4991,8 +4994,8 @@ Rigidbody:
   m_GameObject: {fileID: 875703949279763114}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.5
+  m_Drag: 0.5
+  m_AngularDrag: 5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -5024,6 +5027,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: {fileID: 875703949279763119}
   coins: 0
+  score: 0
 --- !u!1 &4854526501231126443
 GameObject:
   m_ObjectHideFlags: 0

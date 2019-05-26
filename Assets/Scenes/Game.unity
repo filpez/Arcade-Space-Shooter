@@ -981,6 +981,9 @@ MonoBehaviour:
   currentHP: {fileID: 22005082}
   lives: {fileID: 1981752716}
   rockets: {fileID: 511769188}
+  score: {fileID: 937161078}
+  killcount: {fileID: 126739059}
+  coins: {fileID: 844118787}
 --- !u!114 &824576383 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7114675809713177289, guid: efb7cba21d60b2e4c830b3592705f4b4,

@@ -27,7 +27,13 @@ namespace __Shooter__
         public float lastHit = 0;
 
         public static float thrust = 20;
-        public static float drift = 1;
+        public static float drift = 3;
+
+        public int killCount = 0;
+
+        public float fireRate = 0.5f;
+
+        private float lastFire = 0;
 
         private Rigidbody rb;
 
@@ -52,14 +58,17 @@ namespace __Shooter__
 
         public void FireShot(Vector3 target)
         {
-            GameObject shot = ObjectPoolManager.instance.GetPooledObject("Shot");
-            shot.transform.position = transform.position;
-            shot.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target - transform.position);
-            shot.GetComponent<Shot>().shooter = this;
-            shot.SetActive(true);
+            if (Time.time - lastFire > fireRate){
+                GameObject shot = ObjectPoolManager.instance.GetPooledObject("Shot");
+                shot.transform.position = transform.position;
+                shot.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target - transform.position);
+                shot.GetComponent<Shot>().shooter = this;
+                shot.SetActive(true);
+                lastFire = Time.time;
+            }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, Ship shooter)
         {
             lastHit = Time.time;
 
@@ -73,18 +82,27 @@ namespace __Shooter__
             }
             else if (lives > 0){
                 Explode();
-                transform.position = Vector3.zero;
+                
+                Reset();
+                lives--;
+            }
+            else {
+                Debug.Log(shooter.killCount);
+                if (shooter != null){
+                    shooter.killCount++;
+                    Debug.Log(shooter.killCount);
+                }
+                Die();
+            }
+        }
+
+        private void Reset(){
+            transform.position = Vector3.zero;
                 transform.eulerAngles = Vector3.zero;
                 rb.velocity = Vector3.zero;
 
-                lives--;
-                RechargeShield();
+                currentShield = shieldCapacity;
                 hitpoints = maxHitpoints;
-
-            }
-            else {
-                Die();
-            }
         }
 
         public void Explode()

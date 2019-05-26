@@ -39,6 +39,8 @@ namespace __Shooter__{
             rockets.text = "Rockets: " + player.ship.currentRockets;
 
             coins.text = "Coins: " + player.coins;
+            killcount.text = "Enemies Killed: " + player.ship.killCount;
+            score.text = "Score: " + player.score;
         }
     }
 }

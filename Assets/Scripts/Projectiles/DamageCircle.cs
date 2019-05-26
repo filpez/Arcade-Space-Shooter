@@ -24,7 +24,7 @@ namespace __Shooter__{
 
             foreach (Ship ship in ShipManager.instance.GetShips()){
                 if (ship.transform.position.sqrMagnitude > limit && Time.time - ship.lastHit >= 1){
-                    ship.TakeDamage(10);
+                    ship.TakeDamage(10, null);
                 }
             }
 

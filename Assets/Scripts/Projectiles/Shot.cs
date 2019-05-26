@@ -24,7 +24,7 @@ namespace __Shooter__ {
             if (other.GetComponent<Ship>() != null && other.GetComponent<Ship>() != shooter)
             {
                 Ship ship = other.GetComponent<Ship>();
-                ship.TakeDamage(damage);
+                ship.TakeDamage(damage, shooter);
                 
                 Explode();
 
