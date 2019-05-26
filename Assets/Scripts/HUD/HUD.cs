@@ -17,6 +17,9 @@ namespace __Shooter__{
         public Text score;
         public Text killcount;
         public Text coins;
+
+
+        public Text timer;
         
 
         private Player player;
@@ -41,6 +44,8 @@ namespace __Shooter__{
             coins.text = "Coins: " + player.coins;
             killcount.text = "Enemies Killed: " + player.ship.killCount;
             score.text = "Score: " + player.score;
+
+            timer.text = "Next round in\n" + (int)GameManager.instance.timer;
         }
     }
 }

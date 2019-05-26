@@ -23,6 +23,11 @@ namespace __Shooter__{
         void Update(){
             timer -= Time.deltaTime;
 
+            Debug.Log(ShipManager.instance.GetShips().Count);
+            if (ShipManager.instance.GetShips().Count <= 1){
+                timer = 0;
+            }
+
             if (timer <= 0){
                 currentRound++;
                 spawner.Spawn(currentRound);

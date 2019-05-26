@@ -4976,14 +4976,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 0
   hitpoints: 100
-  currentRockets: 3
-  rockets_capacity: 3
   currentShield: 40
   shieldCapacity: 40
   shieldRechargeRate: 10
-  lastHit: 0
+  currentRockets: 3
+  rocketsCapacity: 3
+  thrust: 20
+  drift: 1
   killCount: 0
   fireRate: 0.5
+  lastHit: 0
 --- !u!54 &1080671667422667554
 Rigidbody:
   m_ObjectHideFlags: 0

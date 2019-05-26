@@ -6,34 +6,41 @@ namespace __Shooter__
 {
     public class Ship : MonoBehaviour
     {
+        [Header("Lives")]
         public int lives = 3;
         public static int max_lives = 3;
 
         public int hitpoints = 100;
         public static int maxHitpoints = 100;
 
-        public int currentRockets = 3;
-        public int rocketsCapacity = 3;
-        public static int maxRockets = 10;
-
+        
+        [Header("Shield")]
         public float currentShield = 40;
         public float shieldCapacity = 40;
         public static float maxShield = 100;
 
         public float shieldRechargeRate = 10;
         public static float minShieldRechargeRate = 3;
-
         public static int shieldRechargeSpeed = 10;
-        public float lastHit = 0;
 
-        public static float thrust = 20;
-        public static float drift = 3;
+        [Header("Rockets")]
+        public int currentRockets = 3;
+        public int rocketsCapacity = 3;
+        public static int maxRockets = 10;
+        
 
+        [Header("Movement")]
+        public float thrust = 20;
+        public float drift = 3;
+
+        [Header("Other")]
         public int killCount = 0;
 
         public float fireRate = 0.5f;
 
         private float lastFire = 0;
+
+        public float lastHit = 0;
 
         private Rigidbody rb;
 
