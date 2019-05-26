@@ -21,6 +21,7 @@ namespace __Input__
             
             //Bind commands
             buttonMouseLeft = new FireShot();
+            buttonMouseRight = new FireRocket();
 
             buttonW = new MoveForward();
             buttonA = new RotateLeft();
@@ -39,6 +40,12 @@ namespace __Input__
                 ((FireShot)buttonMouseLeft).target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 ((FireShot)buttonMouseLeft).target.y = 0;
                 buttonMouseLeft.Execute(player);
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                ((FireRocket)buttonMouseRight).target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                ((FireRocket)buttonMouseRight).target.y = 0;
+                buttonMouseRight.Execute(player);
             }
             
             if (Input.GetKey(KeyCode.W))

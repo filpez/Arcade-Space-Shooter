@@ -36,7 +36,7 @@ namespace __Shooter__{
             maxShield.sizeDelta = new Vector2 (180 * player.ship.shieldCapacity/100, maxShield.sizeDelta.y);
 
             lives.text = "Lives: " + player.ship.lives;
-            rockets.text = "Rockets: " + player.ship.currentRockets;
+            rockets.text = "Rockets: " + player.ship.currentRockets + "/" + player.ship.rocketsCapacity ;
 
             coins.text = "Coins: " + player.coins;
             killcount.text = "Enemies Killed: " + player.ship.killCount;

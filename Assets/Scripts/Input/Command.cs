@@ -16,6 +16,15 @@ namespace __Input__ {
 
     }
 
+    public class FireRocket : ICommand {
+        public Vector3 target;
+        public void Execute(__Shooter__.Ship ship)
+        {
+            ship.FireRocket(target);
+        }
+
+    }
+
     public class MoveForward : ICommand { 
         public void Execute(__Shooter__.Ship ship)
         {

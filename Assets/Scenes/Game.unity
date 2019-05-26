@@ -908,7 +908,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 1.8e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1918,15 +1918,15 @@ MonoBehaviour:
     pooledObjects: []
     tag: Shot Explosion
   - initialAmount: 20
-    objectToPool: {fileID: 8173788811819650958, guid: c34c2577a372a8f4682090357f32f5da,
+    objectToPool: {fileID: 1787378473990410, guid: 84f0b7a948feabb499a8ff8ffe7fc5c5,
       type: 3}
     pooledObjects: []
-    tag: Shot Explosion
+    tag: Rocket
   - initialAmount: 20
-    objectToPool: {fileID: 8173788811819650958, guid: c34c2577a372a8f4682090357f32f5da,
+    objectToPool: {fileID: 7127464732348178912, guid: 8ec478f6d78c1ca4bbd52e1aab332c77,
       type: 3}
     pooledObjects: []
-    tag: Shot Explosion
+    tag: Rocket Explosion
   - initialAmount: 20
     objectToPool: {fileID: 4012486475138873561, guid: b3829d61b62add54a847f6dc55d7a8bb,
       type: 3}
@@ -1944,7 +1944,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909314812}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b053af2f0d3a5744cb7d1a1057c0d24d, type: 3}
   m_Name: 

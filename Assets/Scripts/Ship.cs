@@ -13,8 +13,8 @@ namespace __Shooter__
         public static int maxHitpoints = 100;
 
         public int currentRockets = 3;
-        public int rockets_capacity = 3;
-        public static int max_rockets = 10;
+        public int rocketsCapacity = 3;
+        public static int maxRockets = 10;
 
         public float currentShield = 40;
         public float shieldCapacity = 40;
@@ -68,6 +68,18 @@ namespace __Shooter__
             }
         }
 
+        public void FireRocket(Vector3 target)
+        {
+            if (currentRockets > 0){
+                GameObject rocket = ObjectPoolManager.instance.GetPooledObject("Rocket");
+                rocket.transform.position = transform.position;
+                rocket.transform.rotation = Quaternion.FromToRotation(Vector3.forward, target - transform.position);
+                rocket.GetComponent<Rocket>().shooter = this;
+                rocket.SetActive(true);
+                currentRockets--;
+            }
+        }
+
         public void TakeDamage(int damage, Ship shooter)
         {
             lastHit = Time.time;
@@ -87,10 +99,8 @@ namespace __Shooter__
                 lives--;
             }
             else {
-                Debug.Log(shooter.killCount);
                 if (shooter != null){
                     shooter.killCount++;
-                    Debug.Log(shooter.killCount);
                 }
                 Die();
             }
