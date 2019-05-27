@@ -13,10 +13,12 @@ namespace __Shooter__{
         {
             UpdateNearestShip();
             if (nearestShip != null){
-                float nearestShipAngle = Vector3.Angle(parentShip.transform.forward, nearestShip.position - parentShip.transform.position);
+                float nearestShipAngle = Vector3.SignedAngle( nearestShip.position - parentShip.transform.position, parentShip.transform.forward, Vector3.up);
                 transform.localEulerAngles = new Vector3(90, 0, nearestShipAngle);
+
+
                 
-                nearestShipAngle *= Mathf.PI/180;
+                nearestShipAngle *= Mathf.Deg2Rad;
                 transform.localPosition = new Vector3(-Mathf.Sin(nearestShipAngle) * 8, 0, Mathf.Cos(nearestShipAngle) * 8);
             }
         }
