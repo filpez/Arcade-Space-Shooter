@@ -19,6 +19,8 @@ namespace __Shooter__{
         public Text coins;
         public Text wave;
 
+        private float barSize;
+
 
         public Text timer;
         
@@ -29,15 +31,16 @@ namespace __Shooter__{
         void Start()
         {
             player = GameManager.instance.player;
+            barSize = currentHP.sizeDelta.x;
         }
 
         // Update is called once per frame
         void Update()
         {
-            currentHP.sizeDelta = new Vector2 (180 * player.ship.hitpoints/100, currentHP.sizeDelta.y);
+            currentHP.sizeDelta = new Vector2 (barSize * player.ship.hitpoints/100, currentHP.sizeDelta.y);
 
-            currentShield.sizeDelta = new Vector2 (180 * player.ship.currentShield/100, currentShield.sizeDelta.y);
-            maxShield.sizeDelta = new Vector2 (180 * player.ship.shieldCapacity/100, maxShield.sizeDelta.y);
+            currentShield.sizeDelta = new Vector2 (barSize * player.ship.currentShield/100, currentShield.sizeDelta.y);
+            maxShield.sizeDelta = new Vector2 (barSize * player.ship.shieldCapacity/100, maxShield.sizeDelta.y);
 
             lives.text = "Lives: " + player.ship.lives;
             rockets.text = "Rockets: " + player.ship.currentRockets + "/" + player.ship.rocketsCapacity ;

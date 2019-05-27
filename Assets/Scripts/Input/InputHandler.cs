@@ -13,6 +13,7 @@ namespace __Input__
         ICommand buttonW;
         ICommand buttonA;
         ICommand buttonD;
+        ICommand buttonSpace;
 
 
         void Start()
@@ -26,6 +27,8 @@ namespace __Input__
             buttonW = new MoveForward();
             buttonA = new RotateLeft();
             buttonD = new RotateRight();
+            buttonSpace = new Pause();
+
         }
 
         void Update()
@@ -60,6 +63,11 @@ namespace __Input__
             else if (Input.GetKey(KeyCode.D))
             {
                 buttonD.Execute(player);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                buttonSpace.Execute(player);
             }
         }
     }

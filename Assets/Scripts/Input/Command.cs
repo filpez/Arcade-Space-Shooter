@@ -49,4 +49,19 @@ namespace __Input__ {
 
     }
 
+    public class Pause : ICommand { 
+        public void Execute(__Shooter__.Ship ship)
+        {
+            if(__Shooter__.PauseManager.instance.paused){
+                __Shooter__.PauseManager.instance.Continue();
+                __Shooter__.PauseManager.instance.DeactivateMenu();
+            }
+            else {
+                __Shooter__.PauseManager.instance.Pause();
+                __Shooter__.PauseManager.instance.ActivateMenu();
+            }
+        }
+
+    }
+
 }
