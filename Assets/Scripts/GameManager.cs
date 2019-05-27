@@ -13,6 +13,8 @@ namespace __Shooter__{
 
         public Player player;
         public EnemySpawner spawner;
+
+        public GameObject shop;
         
         // Start is called before the first frame update
         void Awake()
@@ -28,10 +30,22 @@ namespace __Shooter__{
             }
 
             if (timer <= 0){
+                if (currentRound > 0)
+                    OpenShop();
                 currentRound++;
                 spawner.Spawn(currentRound);
                 timer = roundTime;
             }
+        }
+
+        public void OpenShop(){
+            Time.timeScale = 0;
+            shop.SetActive(true);
+        }
+
+        public void CloseShop(){
+            Time.timeScale = 1;
+            shop.SetActive(false);
         }
     }
 }

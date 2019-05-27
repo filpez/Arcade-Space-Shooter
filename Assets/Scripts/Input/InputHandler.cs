@@ -38,7 +38,7 @@ namespace __Input__
 
         void HandleInput()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 ((FireShot)buttonMouseLeft).target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 ((FireShot)buttonMouseLeft).target.y = 0;

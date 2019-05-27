@@ -8,7 +8,7 @@ namespace __Shooter__
     {
         [Header("Lives")]
         public int lives = 3;
-        public static int max_lives = 3;
+        public static int maxLives = 3;
 
         public int hitpoints = 100;
         public static int maxHitpoints = 100;
