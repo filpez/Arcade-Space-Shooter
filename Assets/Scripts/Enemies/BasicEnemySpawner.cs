@@ -18,7 +18,7 @@ namespace __Shooter__
 
             for (int i = 1; i <= numberOfEnemies; i++){
                 float angle = 2*Mathf.PI/numberOfEnemies * i;
-                GameObject enemy = Instantiate(enemyPrefab, new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle))*radius, Quaternion.identity);
+                GameObject enemy = Instantiate(enemyPrefab, new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle))*radius, Quaternion.Euler(0, (Mathf.PI + angle) * Mathf.Rad2Deg, 0));
                 
                 Material mainColor = mainColors[Random.Range(0, mainColors.Count)];
                 Material secundaryColor = secundaryColors[Random.Range(0, secundaryColors.Count)];

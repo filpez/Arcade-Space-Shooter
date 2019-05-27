@@ -23,7 +23,6 @@ namespace __Shooter__{
         void Update(){
             timer -= Time.deltaTime;
 
-            Debug.Log(ShipManager.instance.GetShips().Count);
             if (ShipManager.instance.GetShips().Count <= 1){
                 timer = 0;
             }
