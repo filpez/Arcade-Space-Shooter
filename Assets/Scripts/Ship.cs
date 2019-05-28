@@ -42,6 +42,8 @@ namespace __Shooter__
 
         public float lastHit = 0;
 
+        public bool alive = true;
+
         private Rigidbody rb;
 
         void Start() {
@@ -131,6 +133,7 @@ namespace __Shooter__
 
         public void Die()
         {
+            alive = false;
             GameObject coin = ObjectPoolManager.instance.GetPooledObject("Coin");
             coin.transform.position = transform.position;
             coin.SetActive(true);

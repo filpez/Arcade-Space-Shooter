@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace __Shooter__{
     public class Player: MonoBehaviour{
@@ -25,6 +26,13 @@ namespace __Shooter__{
             if (other.gameObject.CompareTag("Coin"))
             {
                coins++;
+            }
+        }
+
+        void OnDestroy(){
+            if (!ship.alive){
+                HighscoresTable.AddNewEntry(score + coins);
+                SceneManager.LoadScene(2);
             }
         }
     }
