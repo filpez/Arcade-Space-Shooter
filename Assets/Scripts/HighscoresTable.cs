@@ -18,9 +18,11 @@ public class HighscoresTable : MonoBehaviour
 
     void Awake()
     {
-        entriesList = Load().entriesList;
+        Highscores highscores = Load();
         if (entriesList == null)
-             entriesList = new List<HighscoresEntry>();
+            entriesList = new List<HighscoresEntry>();
+        else   
+            entriesList = highscores.entriesList;
 
         if (newEntry != null){
             int index = 0;
