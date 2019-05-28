@@ -46,7 +46,6 @@ public class HighscoresTable : MonoBehaviour
 
     public static void OnEndEdit(string newName){
         newEntry.name = newName;
-        Debug.Log(newEntry.name);
     }
 
     void CreateEntry(HighscoresEntry entry, Transform container, List<Transform> transformList)

@@ -44,6 +44,8 @@ namespace __Shooter__
 
         public bool alive = true;
 
+        public bool playAudio = false;
+
         private Rigidbody rb;
 
         void Start() {
@@ -74,6 +76,8 @@ namespace __Shooter__
                 shot.GetComponent<Shot>().shooter = this;
                 shot.SetActive(true);
                 lastFire = Time.time;
+                if (playAudio)
+                    AudioManager.instance.PlayClip(0);
             }
         }
 
@@ -96,10 +100,14 @@ namespace __Shooter__
             if (currentShield > 0)
             {
                 currentShield -= damage;
+                if (playAudio)
+                    AudioManager.instance.PlayClip(1);
             }
             else if (hitpoints > 0)
             {
                 hitpoints -= damage;
+                if (playAudio)
+                    AudioManager.instance.PlayClip(2);
             }
             else if (lives > 0){
                 Explode();

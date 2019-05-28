@@ -4988,6 +4988,8 @@ MonoBehaviour:
   killCount: 0
   fireRate: 0.1
   lastHit: 0
+  alive: 1
+  playAudio: 1
 --- !u!54 &875703949279763112
 Rigidbody:
   m_ObjectHideFlags: 0
